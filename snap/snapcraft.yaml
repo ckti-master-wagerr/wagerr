@@ -1,9 +1,9 @@
 # Copyright (c) 2018-2019 The Ion developers
 # Copyright (c) 2018-2019 The Wagerr developers
 # Copyright (c) 2019 The OBSR developers
-name: wagerr
+name: ckti-wagerr-master
 base: core18
-version: 3.1.99
+version: 4.0.99
 summary:   wagerr, digital currency for decentralized betting
 description: |
   Wagerr is a decentralized sportsbook that changes the way the world
@@ -115,7 +115,7 @@ apps:
     plugs: [home]
 parts:
   wagerr:
-    source: https://github.com/wagerr/wagerr
+    source: https://github.com/ckti-wagerr-master/wagerr
     source-type: git
     source-tag: master
     plugin: nil
