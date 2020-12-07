@@ -3,7 +3,7 @@
 # Copyright (c) 2019 The OBSR developers
 name: wagerr
 base: core18
-version: 3.1.99
+version: v4.0.0rc4
 summary:   wagerr, digital currency for decentralized betting
 description: |
   Wagerr is a decentralized sportsbook that changes the way the world
@@ -117,7 +117,7 @@ parts:
   wagerr:
     source: https://github.com/wagerr/wagerr
     source-type: git
-    source-tag: master
+    source-tag: v4.0.0rc4
     plugin: nil
     override-build: |
       echo "+++++++++++++++++++++++++++++++++++++++++++++++"
