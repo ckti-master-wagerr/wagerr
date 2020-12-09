@@ -14,25 +14,7 @@ Build-Depends: debhelper,
  pkg-config,
  bsdmainutils,
  python,
- libminiupnpc8-dev | libminiupnpc-dev,
- libboost-system-dev (>> 1.47),
- libboost-filesystem-dev (>> 1.47),
- libboost-chrono-dev (>> 1.47),
- libboost-test-dev (>> 1.47),
- libboost-thread-dev (>> 1.47),
- libboost-program-options-dev (>> 1.47),
- libdb4.8-dev,
- libdb4.8++-dev,
- libssl-dev-depends,
- qtbase5-dev, qttools5-dev-tools, qttools5-dev,
- libgmp-dev,
- libqrencode-dev,
- libprotobuf-dev, protobuf-compiler,
- libevent-dev,
- libzmq3-dev,
- locales-all,
- help2man,
- chia-bls,
+ curl,
  doxygen
 Standards-Version: 4.3.0
 Homepage: http://www.wagerr.com
@@ -41,14 +23,6 @@ Vcs-Browser: http://github.com/wagerr/wagerr
 
 Package: wagerrd
 Architecture: any
-Depends: libboost-program-options1.71.0 | libboost-program-options1.67.0 | libboost-program-options1.65.1 | libboost-program-options1.58.0,
- libboost-thread1.71.0 | libboost-thread1.67.0 | libboost-thread1.65.1 | libboost-thread1.58.0,
- libboost-chrono1.71.0 | libboost-chrono1.67.0 | libboost-chrono1.65.1 | libboost-chrono1.58.0,
- libqrencode3 | libqrencode4,
- libprotobuf17 | libprotobuf10 | libprotobuf9v5,
- libdb4.8++,
- libevent-pthreads-2.1-7 | libevent-pthreads-2.1-6 | libevent-pthreads-2.0-5,
- libssl1.0.0 | libssl1.0.0-depends
 Description: Wagerr is a decentralized sportsbook that changes the way the world bets on sports.
  .
  built for everyone.
@@ -100,14 +74,6 @@ Description: Wagerr is a decentralized sportsbook that changes the way the world
 
 Package: wagerr-cli
 Architecture: any
-Depends: libboost-program-options1.71.0 | libboost-program-options1.67.0 | libboost-program-options1.65.1 | libboost-program-options1.58.0,
- libboost-thread1.71.0 | libboost-thread1.67.0 | libboost-thread1.65.1 | libboost-thread1.58.0,
- libboost-chrono1.71.0 | libboost-chrono1.67.0 | libboost-chrono1.65.1 | libboost-chrono1.58.0,
- libqrencode3 | libqrencode4,
- libprotobuf17 | libprotobuf10 | libprotobuf9v5,
- libdb4.8++,
- libevent-pthreads-2.1-7 | libevent-pthreads-2.1-6 | libevent-pthreads-2.0-5,
- libssl1.0.0 | libssl1.0.0-depends
 Description: Wagerr is a decentralized sportsbook that changes the way the world bets on sports.
  .
  built for everyone.
@@ -159,16 +125,6 @@ Description: Wagerr is a decentralized sportsbook that changes the way the world
 
 Package: wagerr-qt
 Architecture: any
-Depends: libboost-program-options1.71.0 | libboost-program-options1.67.0 | libboost-program-options1.65.1 | libboost-program-options1.58.0,
- libboost-thread1.71.0 | libboost-thread1.67.0 | libboost-thread1.65.1 | libboost-thread1.58.0,
- libboost-chrono1.71.0 | libboost-chrono1.67.0 | libboost-chrono1.65.1 | libboost-chrono1.58.0,
- libqt5network5,
- libqt5widgets5,
- libqrencode3 | libqrencode4,
- libprotobuf17 | libprotobuf10 | libprotobuf9v5,
- libdb4.8++,
- libevent-pthreads-2.1-7 | libevent-pthreads-2.1-6 | libevent-pthreads-2.0-5,
- libssl1.0.0 | libssl1.0.0-depends
 Description: gaming related peer-to-peer network based digital currency ION GUI
  Ion Core is an MIT licensed,  open source, gaming oriented,
  blockchain-based cryptocurrency with ultra fast transactions,
@@ -200,14 +156,6 @@ Description: gaming related peer-to-peer network based digital currency ION GUI
 
 Package: wagerr-tx
 Architecture: any
-Depends: libboost-program-options1.71.0 | libboost-program-options1.67.0 | libboost-program-options1.65.1 | libboost-program-options1.58.0,
- libboost-thread1.71.0 | libboost-thread1.67.0 | libboost-thread1.65.1 | libboost-thread1.58.0,
- libboost-chrono1.71.0 | libboost-chrono1.67.0 | libboost-chrono1.65.1 | libboost-chrono1.58.0,
- libqrencode3 | libqrencode4,
- libprotobuf17 | libprotobuf10 | libprotobuf9v5,
- libdb4.8++,
- libevent-pthreads-2.1-7 | libevent-pthreads-2.1-6 | libevent-pthreads-2.0-5,
- libssl1.0.0 | libssl1.0.0-depends
 Description: Wagerr is a decentralized sportsbook that changes the way the world bets on sports.
  .
  built for everyone.
@@ -259,16 +207,6 @@ Description: Wagerr is a decentralized sportsbook that changes the way the world
 
 Package: wagerr-full
 Architecture: any
-Depends: libboost-program-options1.71.0 | libboost-program-options1.67.0 | libboost-program-options1.65.1 | libboost-program-options1.58.0,
- libboost-thread1.71.0 | libboost-thread1.67.0 | libboost-thread1.65.1 | libboost-thread1.58.0,
- libboost-chrono1.71.0 | libboost-chrono1.67.0 | libboost-chrono1.65.1 | libboost-chrono1.58.0,
- libqt5network5,
- libqt5widgets5,
- libqrencode3 | libqrencode4,
- libprotobuf17 | libprotobuf10 | libprotobuf9v5,
- libdb4.8++,
- libevent-pthreads-2.1-7 | libevent-pthreads-2.1-6 | libevent-pthreads-2.0-5,
- libssl1.0.0 | libssl1.0.0-depends
 Description: Wagerr is a decentralized sportsbook that changes the way the world bets on sports.
  .
  built for everyone.
@@ -321,16 +259,6 @@ Description: Wagerr is a decentralized sportsbook that changes the way the world
 
 Package: wagerr-dev
 Architecture: any
-Depends: libboost-program-options1.71.0 | libboost-program-options1.67.0 | libboost-program-options1.65.1 | libboost-program-options1.58.0,
- libboost-thread1.71.0 | libboost-thread1.67.0 | libboost-thread1.65.1 | libboost-thread1.58.0,
- libboost-chrono1.71.0 | libboost-chrono1.67.0 | libboost-chrono1.65.1 | libboost-chrono1.58.0,
- libqt5network5,
- libqt5widgets5,
- libqrencode3 | libqrencode4,
- libprotobuf17 | libprotobuf10 | libprotobuf9v5,
- libdb4.8++,
- libevent-pthreads-2.1-7 | libevent-pthreads-2.1-6 | libevent-pthreads-2.0-5,
- libssl1.0.0 | libssl1.0.0-depends
 Description: Wagerr is a decentralized sportsbook that changes the way the world bets on sports.
  .
  built for everyone.
