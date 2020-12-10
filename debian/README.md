@@ -1,24 +1,23 @@
-
 Debian
 ====================
 This directory contains files used to package
 
-    iond, ion-qt, ion-tx, ion-full, ion-dev
+    wagerrd, wagerr-qt, wagerr-tx, wagerr-full, wagerr-dev
 
-for Debian-based Linux systems. If you compile iond/ion-qt yourself, there are some useful files here.
+for Debian-based Linux systems. If you compile wagerrd/wagerr-qt yourself, there are some useful files here.
 
-## ion: URI support ##
+## wagerr: URI support ##
 
 
-ion-qt.desktop  (Gnome / Open Desktop)
+wagerr-qt.desktop  (Gnome / Open Desktop)
 To install:
 
-	sudo desktop-file-install ion-qt.desktop
+	sudo desktop-file-install wagerr-qt.desktop
 	sudo update-desktop-database
 
 If you build yourself, you will either need to modify the paths in
-the .desktop file or copy or symlink your ion-qt binary to `/usr/bin`
-and the `../../share/pixmaps/ion128.png` to `/usr/share/pixmaps`
+the .desktop file or copy or symlink your wagerr-qt binary to `/usr/bin`
+and the `../../share/pixmaps/wagerr128.png` to `/usr/share/pixmaps`
 
-ion-qt.protocol (KDE)
+wagerr-qt.protocol (KDE)
 
