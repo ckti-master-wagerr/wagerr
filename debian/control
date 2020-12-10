@@ -33,7 +33,6 @@ Build-Depends: debhelper,
  locales-all,
  help2man,
  doxygen
-
 Standards-Version: 4.3.0
 Homepage: http://www.wagerr.com
 Vcs-Git: git://github.com/wagerr/wagerr.git
