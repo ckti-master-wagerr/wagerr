@@ -160,18 +160,38 @@ Depends: libboost-program-options1.71.0 | libboost-program-options1.67.0 | libbo
  libdb4.8++,
  libevent-pthreads-2.1-7 | libevent-pthreads-2.1-6 | libevent-pthreads-2.0-5,
  libssl1.0.0 | libssl1.0.0-depends
-Description: gaming related peer-to-peer network based digital currency ION GUI
- Ion Core is an MIT licensed,  open source, gaming oriented,
- blockchain-based cryptocurrency with ultra fast transactions,
- low fees, high network decentralization, and Zero Knowledge
- cryptography proofs for industry-leading transaction anonymity.
+Description: Wagerr is a decentralized sportsbook that changes the way the world bets on sports.
+ .
+ built for everyone.
+ .
+ Wagerr uses distributed
+ blockchain technology to execute betting contracts. It escrows
+ stakes, verifies results, and pays out winners. By eliminating
+ centralauthorities, Wagerr solves the most pernicious problems in
+ the industry. Reducing corruption and risk results in predictable
+ operation. You can bet on Wagerr.
+ .
+ Free of All regulatory bodies
+ Unrestricted global Access
+ Support for all major sport leagues
+ Truly Deflationary Chain
+ Value Coupling
+ .
+ Nearly half of all fees are systematically destroyed — and
+ destroying fees diminishes coin supply. It’s a simple matter of
+ supply and demand
+ Given steady demand, free markets tend to respond to a dwindling
+ supply with rising asset price. Holders of the asset will only
+ sell it for the highest price the market will bear. Watch the
+ video and check out the “economics” tab for more details on how
+ the Wagerr economy works.
  .
  Full transaction history is stored locally at each client.  This
  requires 1+ GB of space, slowly growing.
  .
- This package provides wagerr-qt, a GUI for Wagerr based on Qt.
+ This package provides wagerr-qt, a GUI for Wagerr.
  .
-  Homepage: https://wagerr.com/
+ Homepage: https://wagerr.com/
  Blockexplorer (main): https://explorer.wagerr.com/
  Blockexplorer (testnet): https://explorer2.wagerr.com/
  Github: https://github.com/wagerr/wagerr/
@@ -188,7 +208,6 @@ Description: gaming related peer-to-peer network based digital currency ION GUI
  - reddit (https://www.reddit.com/r/Wagerr/)
  - bitcointalk (https://bitcointalk.org/index.php?topic=1911583.0)
  - facebook (https://www.facebook.com/wagerr/)
-
 Package: wagerr-tx
 Architecture: any
 Depends: libboost-program-options1.71.0 | libboost-program-options1.67.0 | libboost-program-options1.65.1 | libboost-program-options1.58.0,
