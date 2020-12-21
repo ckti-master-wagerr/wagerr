@@ -361,6 +361,7 @@ parts:
         #mv ./squashfs-root/* $SNAPCRAFT_PART_INSTALL/app
         #find $SNAPCRAFT_PART_INSTALL/app/ -type d -exec chmod 755 {} \;
         #rm ./squashfs-root/wagerr-electron-app.png
+        cp -pr /root/parts/wagerr/build/snap /root/parts/wagerr-electron/build
         #cp $SNAPCRAFT_STAGE/wagerr-electron-app.png ./squashfs-root/
         #cp $SNAPCRAFT_STAGE/wagerr-electron-app.png ./squashfs-root/usr/share/icons/hicolor/512x512/apps/
         #cp $SNAPCRAFT_STAGE/wagerr-electron-app.desktop ./squashfs-root/
