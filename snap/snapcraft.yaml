@@ -323,8 +323,8 @@ parts:
       else
         echo "RUN TESTS disabled, skipping"
       fi
-      cp $SNAPCRAFT_PART_SRC/snap/local/desktop/wagerr-electron-app.desktop $SNAPCRAFT_STAGE/wagerr-electron.desktop
-      cp $SNAPCRAFT_PART_SRC/snap/local/desktop/wagerr-electron-app.png $SNAPCRAFT_STAGE/wagerr-electron.desktop
+      cp $SNAPCRAFT_PART_BUILD/snap/local/desktop/wagerr-electron-app.desktop $SNAPCRAFT_STAGE/wagerr-electron.desktop
+      cp $SNAPCRAFT_PART_BUILD/snap/local/desktop/wagerr-electron-app.png $SNAPCRAFT_STAGE/wagerr-electron.desktop
       echo "-----------------------------------------------"
       echo "+++++++++++++++++++++++++++++++++++++++++++++++"
       echo "ELECTRON SPECIFIC"
