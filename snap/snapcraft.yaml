@@ -337,7 +337,7 @@ parts:
     plugin: nil
 
     override-build: |
-      git apply $SNAPCRAFT_STAGE/X005-snap_electron.patch
+      #git apply $SNAPCRAFT_STAGE/X005-snap_electron.patch
       #git apply $SNAPCRAFT_STAGE/Z001-Change-blockchain-folder-and-bins-to-snap.patch
       curl -sL https://deb.nodesource.com/setup_15.x | bash -
       apt-get -y install nodejs
