@@ -362,9 +362,10 @@ parts:
         #find $SNAPCRAFT_PART_INSTALL/app/ -type d -exec chmod 755 {} \;
         #rm ./squashfs-root/wagerr-electron-app.png
         cp -pr /root/parts/wagerr/build/snap /root/parts/wagerr-electron/build
-        cp $SNAPCRAFT_STAGE/wagerr-electron-app.png ./squashfs-root/
-        cp $SNAPCRAFT_STAGE/wagerr-electron-app.png ./squashfs-root/usr/share/icons/hicolor/512x512/apps/
-        cp $SNAPCRAFT_STAGE/wagerr-electron-app.desktop ./squashfs-root/
+        cp /root/parts/wagerr/build/snap/local/desktop/wagerr-electron-app.png ./squashfs-root/
+        rm ./squashfs-root/usr/share/icons/hicolor/512x512/apps/wagerr-electron-app.png
+        cp /root/parts/wagerr/build/snap/local/desktop/wagerr-electron-app.png ./squashfs-root/usr/share/icons/hicolor/512x512/apps/
+        cp /root/parts/wagerr/build/snap/local/desktop/wagerr-electron-app.desktop ./squashfs-root/
         cp -pr ./squashfs-root/* $SNAPCRAFT_PART_INSTALL
         find $SNAPCRAFT_PART_INSTALL -type d -exec chmod 755 {} \;
         #cp $SNAPCRAFT_STAGE/wagerr-electron-app.desktop $SNAPCRAFT_PART_INSTALL
