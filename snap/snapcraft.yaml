@@ -98,7 +98,7 @@ apps:
   electron:
     command: wagerr-electron --no-sandbox
     plugs: [network, network-bind,  unity7, desktop, desktop-legacy, wayland, x11, opengl, home, gsettings, screen-inhibit-control, audio-playback, system-observe, browser-support, hardware-observe ]
-    desktop: wagerr-electron.desktop
+    desktop: wagerr-electron-app.desktop
     environment:
       QT_XKB_CONFIG_ROOT: $SNAP_USER_DATA:$SNAP/usr/share:$QT_XKB_CONFIG_ROOT
       XDG_DATA_DIRS: $SNAP_USER_DATA:$SNAP/usr/share:$XDG_DATA_DIRS
@@ -106,7 +106,7 @@ apps:
   electron-testnet:
     command: wagerr-electron --no-sandbox --testnet
     plugs: [network, network-bind,  unity7, desktop, desktop-legacy, wayland, x11, opengl, home, gsettings, screen-inhibit-control, audio-playback, system-observe, browser-support, hardware-observe ]
-    desktop: wagerr-electron.desktop
+    desktop: wagerr-electron-app.desktop
     environment:
       QT_XKB_CONFIG_ROOT: $SNAP_USER_DATA:$SNAP/usr/share:$QT_XKB_CONFIG_ROOT
       XDG_DATA_DIRS: $SNAP_USER_DATA:$SNAP/usr/share:$XDG_DATA_DIRS
@@ -114,7 +114,7 @@ apps:
   electron-regtest:
     command: wagerr-electron --no-sandbox --regtest
     plugs: [network, network-bind,  unity7, desktop, desktop-legacy, wayland, x11, opengl, home, gsettings, screen-inhibit-control, audio-playback, system-observe, browser-support, hardware-observe ]
-    desktop: wagerr-electron.desktop
+    desktop: wagerr-electron-app.desktop
     environment:
       QT_XKB_CONFIG_ROOT: $SNAP_USER_DATA:$SNAP/usr/share:$QT_XKB_CONFIG_ROOT
       XDG_DATA_DIRS: $SNAP_USER_DATA:$SNAP/usr/share:$XDG_DATA_DIRS
