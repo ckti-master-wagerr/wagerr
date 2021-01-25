@@ -167,13 +167,15 @@ class MasterNodeTest (BitcoinTestFramework):
         self.log.info("Budget Info %s" % self.nodes[0].getbudgetinfo('test1'))
         self.log.info("Budget Votes %s" % self.nodes[0].getbudgetvotes('test1'))
         self.log.info("Block Count Node 0 %s" % self.nodes[0].getblockcount())
+        self.log.info("Masternode sync status %s" % self.nodes[0].mnsync("status"))
+        self.log.info("Masternode sync reset %s" % self.nodes[0].mnsync("reset"))
+        sleep(2000)
 """
 Not Working -- TODO -- Fix it
 masternodeconnect
 masternodecurrent
 mnbudgetrawvote
 mnfinalbudget
-mnsync
 startmasternode
     - [ ] missing
     - [ ] disabled
