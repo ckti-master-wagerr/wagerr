@@ -139,7 +139,7 @@ EXTENDED_SCRIPTS = [
     # Longest test should go first, to favor running tests in parallel
     # vv Tests less than 20m vv
     #'feature_fee_estimation.py', # computed priority ignored TODO Fix it
-    'rpc_masternodes.py'
+    'rpc_masternodes.py',
     # vv Tests less than 5m vv
      'wallet_multisend.py',
     # vv Tests less than 2m vv
