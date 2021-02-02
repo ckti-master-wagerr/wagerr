@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-# Copyright (c) 2014-2017 The Bitcoin Core developers
+# Copyright (c) 2019-2021 The Wagerr developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
-"""Test the functionality of all CLI commands.
+"""Test the functionality of all masternode commands.
 
 """
 from test_framework.test_framework import BitcoinTestFramework
@@ -19,7 +19,7 @@ import subprocess
 class MasterNodeTest (BitcoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
-        self.num_nodes = 1
+        self.num_nodes = 2
         #self.extra_args = [["-debug"]]
 
     def run_test(self):
@@ -32,6 +32,7 @@ class MasterNodeTest (BitcoinTestFramework):
         self.log.info("Node 0 Ports rpc %s pub %s" % (node0rpcport, node0pubport))
         self.log.info("Mining Blocks...")
         self.nodes[0].generate(103)
+        self.sync_all()
         self.log.info("Block Count Node 0 %s" % self.nodes[0].getblockcount())
         self.log.info("Balance Node 0 %s" % self.nodes[0].getbalance())
         mnpriv0=self.nodes[0].createmasternodekey()
@@ -74,13 +75,16 @@ class MasterNodeTest (BitcoinTestFramework):
         self.stop_node(0)
         self.start_node(0)
         self.log.info("Confirming Masternode Wallet Transactions")
+        connect_nodes_bi(self.nodes, 0, 1)
         self.nodes[0].generate(15)
+        self.sync_all()
         self.log.info("Testing startmasternode 'alias, false, mn0'")
         self.log.info("Starting Masternode Node 0 %s" % self.nodes[0].startmasternode('alias','false', 'mn0'))
         self.log.info("Block Count Node 0 %s" % self.nodes[0].getblockcount())
         self.log.info("Restarting Node 0")
         self.stop_node(0)
         self.start_node(0)
+        connect_nodes_bi(self.nodes, 0, 1)
         self.log.info("Testing startmasternode 'local, false'")
         self.log.info("Starting Masternode %s" % self.nodes[0].startmasternode('local','false'))
         self.log.info("Restarting Node 0")
@@ -91,12 +95,17 @@ class MasterNodeTest (BitcoinTestFramework):
         self.log.info("Restarting Node 0")
         self.stop_node(0)
         self.start_node(0)
+        connect_nodes_bi(self.nodes, 0, 1)
         self.log.info("Testing startmasternode 'many, false'")
         self.log.info("Starting Masternode %s" % self.nodes[0].startmasternode('many','false'))
         self.log.info("Restarting Node 0")
         self.stop_node(0)
         self.start_node(0)
+        connect_nodes_bi(self.nodes, 0, 1)
         self.log.info("Testing startmasternode 'many, true'")
+        self.stop_node(0)
+        self.start_node(0)
+        connect_nodes_bi(self.nodes, 0, 1)
         self.log.info("Starting Masternode %s" % self.nodes[0].startmasternode('many','true'))
         #self.log.info("Testing startmasternode 'missing, false'")
         #assert_raises_rpc_error(-1, "You can't use this command until masternode list is synced", self.nodes[0].startmasternode('missing','false'))
@@ -113,6 +122,7 @@ class MasterNodeTest (BitcoinTestFramework):
         self.log.info("Testing startmasternode 'alias, true, mn0'")
         self.stop_node(0)
         self.start_node(0)
+        connect_nodes_bi(self.nodes, 0, 1)
         self.log.info("Starting Masternode %s" % self.nodes[0].startmasternode('alias','true','mn0'))
         sleep(5)
         mnbroadcast=self.nodes[0].createmasternodebroadcast('alias','mn0')
@@ -120,33 +130,39 @@ class MasterNodeTest (BitcoinTestFramework):
         mnbroadcastkey=mnbroadcast['hex']
         self.log.info("Decode masternode Broadcast %s" % self.nodes[0].decodemasternodebroadcast(mnbroadcastkey))
         self.log.info("Relay Masternode Broadcast %s" % self.nodes[0].relaymasternodebroadcast(mnbroadcastkey))
-        #self.log.info("Masternode Connect %s" % self.nodes[1].masternodeconnect('127.0.0.1:' + str(node0pubport)))
+        self.log.info("Masternode Connect %s" % self.nodes[1].masternodeconnect('127.0.0.1:' + str(node0pubport)))
         self.log.info("Spork %s" % self.nodes[0].spork('show'))
         # First superblock needs to be passed
         nextsblock=self.nodes[0].getnextsuperblock()
         self.log.info("Mining past first superblock %s" % nextsblock)
         genblocks=nextsblock-103+1
         self.nodes[0].generate(genblocks)
+        self.sync_all()
         sleep(5)
         self.log.info("Block Count Node 0 %s" % self.nodes[0].getblockcount())
         #exit(1)
         nextsblock=self.nodes[0].getnextsuperblock()
-        prophash=self.nodes[0].preparebudget("test1", "https://forum.ioncoin.org/t/test-proposal", 10, nextsblock, mnaddr0, 10)
+        prophash=self.nodes[0].preparebudget("test1", "https://wagerr.com/about", 10, nextsblock, mnaddr0, 10)
         self.log.info("Prepared Budget %s" % prophash)
         self.log.info("Generating 3 blocks to confirm")
         self.nodes[0].generate(3)
+        self.sync_all()
+        #self.log.info("Get Budget Projection %s" % self.nodes[0].getbudgetprojection())
         self.log.info("Block Count Node 0 %s" % self.nodes[0].getblockcount())
-        subhash=self.nodes[0].submitbudget("test1", "https://forum.ioncoin.org/t/test-proposal", 10, nextsblock, mnaddr0, 10, prophash)
+        subhash=self.nodes[0].submitbudget("test1", "https://wagerr.com/about", 10, nextsblock, mnaddr0, 10, prophash)
         self.log.info("Submitting budget %s" % subhash)
         self.log.info("Generating 5 blocks to confirm")
         self.nodes[0].generate(5)
+        self.sync_all()
+        #self.log.info("Get Budget Projection %s" % self.nodes[0].getbudgetprojection())
         self.log.info("Block Count Node 0 %s" % self.nodes[0].getblockcount())
         self.log.info("Check Budgets %s" % self.nodes[0].checkbudgets())
-        self.log.info("Get Budget Projection %s" % self.nodes[0].getbudgetprojection())
         self.log.info("Vote for budget test1 %s" % self.nodes[0].mnbudgetvote('many', subhash, 'yes'))
         self.log.info("Generating past next superblock %s" % nextsblock)
         genblocks=nextsblock-163+1
         self.nodes[0].generate(genblocks)
+        self.sync_all()
+        #self.log.info("Get Budget Projection %s" % self.nodes[0].getbudgetprojection())
         self.log.info("Block Count Node 0 %s" % self.nodes[0].getblockcount())
         #self.sync_all()
         #sync_blocks(self.nodes)
@@ -169,7 +185,20 @@ class MasterNodeTest (BitcoinTestFramework):
         self.log.info("Block Count Node 0 %s" % self.nodes[0].getblockcount())
         self.log.info("Masternode sync status %s" % self.nodes[0].mnsync("status"))
         self.log.info("Masternode sync reset %s" % self.nodes[0].mnsync("reset"))
-        sleep(2000)
+        self.log.info("Get Budget Projection %s" % self.nodes[0].getbudgetprojection())
+        #self.log.info("Testing startmasternode 'missing, false'") ## not working TODO Fix it
+        #self.log.info("Restarting Node 0")
+        #self.stop_node(0)
+        #self.start_node(0)
+        #connect_nodes_bi(self.nodes, 0,1)
+        #self.nodes[0].generate(1)
+        #assert_raises_rpc_error(-1, "You can't use this command until masternode list is synced", self.nodes[0].startmasternode('missing','false'))
+        #self.nodes[0].startmasternode('missing','false')
+        #self.log.info("Restarting Node 0")
+        #self.stop_node(0)
+        #sleep(10)
+        #self.start_node(0)
+
 """
 Not Working -- TODO -- Fix it
 masternodeconnect
