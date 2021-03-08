@@ -248,7 +248,7 @@ Description: gaming related peer-to-peer network based digital currency full sui
    wagerr-qt, wagerrd, wagerr-tx, wagerr-cli
  .
  Documentation and wiki:
-
+ .
  - Wiki (wagerr):      https://github.com/wagerr/wagerr/wiki
  - Wiki (wagerr Core CE): https://github.com/cevap/wagerr/wiki
  - Technical documentation: https://techdoc.wagerrcoin.org
