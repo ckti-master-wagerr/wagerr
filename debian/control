@@ -34,7 +34,7 @@ Build-Depends: debhelper,
  help2man,
  chia-bls,
  doxygen
-Standards-Verswagerr: 4.3.0
+Standards-Version: 4.3.0
 Homepage: http://www.wagerr.com
 Vcs-Git: git://bitbucket.org/wagerr/wagerr.git
 Vcs-Browser: http://bitbucket.org/wagerr/wagerr
