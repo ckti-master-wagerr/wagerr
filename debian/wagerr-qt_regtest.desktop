@@ -1,0 +1,14 @@
+# http://standards.freedesktop.org/desktop-entry-spec/desktop-entry-spec-1.0.html
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=Wagerr Core regtest
+Comment=regtest
+GenericName=Wagerr Digital Currency QT regression test network
+Exec=wagerr-qt --regtest %u
+Terminal=false
+Type=Application
+Icon=wagerr_regtest128
+MimeType=x-scheme-handler/wagerr;
+Categories=X-Finance;X-Games;
+Keywords=internet;wagerr;xwagerr;core;wallet;qt;regtest;deb;launchpad;crypto;digital;currency;coin;betting;zerocoin;

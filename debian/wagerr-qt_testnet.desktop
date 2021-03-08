@@ -1,0 +1,14 @@
+# http://standards.freedesktop.org/desktop-entry-spec/desktop-entry-spec-1.0.html
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=Wagerr Core testnet
+Comment=testnet
+GenericName=Wagerr Digital Currency QT
+Exec=wagerr-qt --testnet %u
+Terminal=false
+Type=Applicatwagerr
+Icon=wagerr_testnet128
+MimeType=x-scheme-handler/wagerr;
+Categories=X-Finance;X-Games;
+Keywords=internet;wagerr;xwagerr;core;wallet;qt;testnet;deb;launchpad;crypto;digital;currency;coin;betting;zerocoin;

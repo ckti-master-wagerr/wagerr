@@ -1,0 +1,40 @@
+#!/usr/bin/make -f
+# -*- mode: makefile; coding: utf-8 -*-
+ifeq ($(DEB_BUILD_GNU_TYPE),i686-linux-gnu)
+	MAKE_HOST = "i386-linux-gnu"
+else
+	MAKE_HOST = $(DEB_BUILD_GNU_TYPE)
+endif
+
+#DEB_MAKE_CHECK_TARGET = test_wagerr
+#build/wagerrd::
+#	$(if $(filter nocheck,$(DEB_BUILD_OPTwagerrS)),,src/test_wagerr)
+
+DEB_INSTALL_EXAMPLES_wagerrd += debian/examples/*
+DEB_INSTALL_MANPAGES_wagerrd += debian/manpages/*
+DEB_INSTALL_MANPAGES_wagerr-cli += debian/manpages/*
+DEB_INSTALL_MANPAGES_wagerr-tx += debian/manpages/*
+DEB_INSTALL_MANPAGES_wagerr-qt += debian/manpages/*
+DEB_INSTALL_EXAMPLES_wagerr-qt += debian/examples/*
+DEB_INSTALL_MANPAGES_wagerr-full += debian/manpages/*
+DEB_INSTALL_EXAMPLES_wagerr-full += debian/examples/*
+DEB_INSTALL_MANPAGES_wagerr-dev += debian/manpages/*
+DEB_INSTALL_EXAMPLES_wagerr-dev += debian/examples/*
+
+%:
+	dh $@ --with bash-completion
+
+override_dh_auto_clean:
+	if [ -f Makefile ]; then $(MAKE) distclean; fi
+	rm -rf Makefile.in aclocal.m4 configure src/Makefile.in src/wagerr-config.h.in src/build-aux src/qt/Makefile.in src/qt/test/Makefile.in src/test/Makefile.in
+
+# Yea, autogen should be run on the source archive, but I like doing git archive
+override_dh_auto_configure:
+	./autogen.sh
+	./configure --enable-reduce-exports --disable-bench --disable-gui-tests  --disable-tests --disable-debug --disable-shared --enable-cxx --with-pic --with-boost-libdir=/usr/lib/${MAKE_HOST} --disable-ccache --disable-maintainer-mode --disable-dependency-tracking
+
+override_dh_auto_build:
+	make -j6
+
+#override_dh_auto_test:
+#	make check

@@ -1,0 +1,14 @@
+# http://standards.freedesktop.org/desktop-entry-spec/desktop-entry-spec-1.0.html
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=Wagerr Core
+Comment=main
+GenericName=Wagerr Digital Currency QT client main network
+Exec=wagerr-qt %u
+Terminal=false
+Type=Application
+Icon=wagerr128
+MimeType=x-scheme-handler/wagerr;
+Categories=X-Finance;X-Games;
+Keywords=internet;wagerr;xwagerr;core;wallet;qt;main;deb;launchpad;crypto;digital;currency;coin;betting;zerocoin;

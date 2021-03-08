@@ -1,0 +1,322 @@
+Source: wagerrcore
+Section: utils
+Priority: optional
+Maintainer: wagerrlp <wagerrlp@i2pmail.org>
+Uploaders: wagerrlp <wagerrlp@i2pmail.org>
+Build-Depends: debhelper,
+ devscripts,
+ bash-completion,
+ build-essential,
+ libtool,
+ autotools-dev,
+ autoconf,
+ automake,
+ pkg-config,
+ bsdmainutils,
+ python,
+ libminiupnpc8-dev | libminiupnpc-dev,
+ libboost-system-dev (>> 1.47),
+ libboost-filesystem-dev (>> 1.47),
+ libboost-chrono-dev (>> 1.47),
+ libboost-test-dev (>> 1.47),
+ libboost-thread-dev (>> 1.47),
+ libboost-program-options-dev (>> 1.47),
+ libdb4.8-dev,
+ libdb4.8++-dev,
+ libssl-dev-depends,
+ qtbase5-dev, qttools5-dev-tools, qttools5-dev,
+ libgmp-dev,
+ libqrencode-dev,
+ libprotobuf-dev, protobuf-compiler,
+ libevent-dev,
+ libzmq3-dev,
+ locales-all,
+ help2man,
+ chia-bls,
+ doxygen
+Standards-Verswagerr: 4.3.0
+Homepage: http://www.wagerr.com
+Vcs-Git: git://bitbucket.org/wagerr/wagerr.git
+Vcs-Browser: http://bitbucket.org/wagerr/wagerr
+
+Package: wagerrd
+Architecture: any
+Depends: libboost-program-options1.71.0 | libboost-program-options1.67.0 | libboost-program-options1.65.1 | libboost-program-options1.58.0,
+ libboost-thread1.71.0 | libboost-thread1.67.0 | libboost-thread1.65.1 | libboost-thread1.58.0,
+ libboost-chrono1.71.0 | libboost-chrono1.67.0 | libboost-chrono1.65.1 | libboost-chrono1.58.0,
+ libqrencode3 | libqrencode4,
+ libprotobuf17 | libprotobuf10 | libprotobuf9v5,
+ libdb4.8++,
+ libevent-pthreads-2.1-7 | libevent-pthreads-2.1-6 | libevent-pthreads-2.0-5,
+ libssl1.0.0 | libssl1.0.0-depends
+Description: gaming related peer-to-peer network based digital currency daemon
+ wagerr Core is an MIT licensed,  open source, gaming oriented,
+ blockchain-based cryptocurrency with ultra fast transactions,
+ low fees, high network decentralization, and Zero Knowledge
+ cryptography proofs for industry-leading transaction anonymity.
+ .
+ Full transaction history is stored locally at each client.  This
+ requires 1+ GB of space, slowly growing.
+ .
+ This package provides wagerrd daemon, a daemon for wagerr.
+ .
+ Documentation and wiki:
+
+ - Wiki (wagerr):      https://github.com/wagerr/wagerr/wiki
+ - Wiki (wagerr Core CE): https://github.com/cevap/wagerr/wiki
+ - Technical documentation: https://techdoc.wagerrcoin.org
+ - Whitepaper: https://wagerr.com/en/whitepaper
+ - Technical whitepaper: https://tinyurl.com/y3st8jfb
+ .
+ Get source code from BitBucket: https://bitbucket.org/wagerr/wagerr.git
+ Get CE source code from Github: https://github.com/cevap/wagerr.git
+ .
+ Chat with Support on Discord: https://discord.gg/vuZn7gC
+ .
+ Contact us on social networks and forums
+ Instagram: https://t.me/wagerr
+ Twitter:   https://twitter.com/wagerromics
+ Reddit:    https://www.reddit.com/r/wagerr/
+ Facebook:  https://facebook.com/wagerr
+ .
+ - Feature request: https://tinyurl.com/y5ds7s3t
+ - I need help/support (observed by wagerr.com staff): https://tinyurl.com/yy6xa3p4
+ - Report a bug: https://tinyurl.com/y5wzybwe
+ - Report some random issue: https://tinyurl.com/y5cgm2vp
+ - Testing Report: https://tinyurl.com/y39n2hsv
+
+Package: wagerr-cli
+Architecture: any
+Depends: libboost-program-options1.71.0 | libboost-program-options1.67.0 | libboost-program-options1.65.1 | libboost-program-options1.58.0,
+ libboost-thread1.71.0 | libboost-thread1.67.0 | libboost-thread1.65.1 | libboost-thread1.58.0,
+ libboost-chrono1.71.0 | libboost-chrono1.67.0 | libboost-chrono1.65.1 | libboost-chrono1.58.0,
+ libqrencode3 | libqrencode4,
+ libprotobuf17 | libprotobuf10 | libprotobuf9v5,
+ libdb4.8++,
+ libevent-pthreads-2.1-7 | libevent-pthreads-2.1-6 | libevent-pthreads-2.0-5,
+ libssl1.0.0 | libssl1.0.0-depends
+Description: gaming related peer-to-peer network based digital currency CLI
+ wagerr Core is an MIT licensed,  open source, gaming oriented,
+ blockchain-based cryptocurrency with ultra fast transactions,
+ low fees, high network decentralization, and Zero Knowledge
+ cryptography proofs for industry-leading transaction anonymity.
+ .
+ Full transaction history is stored locally at each client.  This
+ requires 1+ GB of space, slowly growing.
+ .
+ This package provides wagerr-cli, a CLI for wagerr.
+ .
+ Documentation and wiki:
+
+ - Wiki (wagerr):      https://github.com/wagerr/wagerr/wiki
+ - Wiki (wagerr Core CE): https://github.com/cevap/wagerr/wiki
+ - Technical documentation: https://techdoc.wagerrcoin.org
+ - Whitepaper: https://wagerr.com/en/whitepaper
+ - Technical whitepaper: https://tinyurl.com/y3st8jfb
+ .
+ Get source code from BitBucket: https://bitbucket.org/wagerr/wagerr.git
+ Get CE source code from Github: https://github.com/cevap/wagerr.git
+ .
+ Chat with Support on Discord: https://discord.gg/vuZn7gC
+ .
+ Contact us on social networks and forums
+ Instagram: https://t.me/wagerr
+ Twitter:   https://twitter.com/wagerromics
+ Reddit:    https://www.reddit.com/r/wagerr/
+ Facebook:  https://facebook.com/wagerr
+ .
+ - Feature request: https://tinyurl.com/y5ds7s3t
+ - I need help/support (observed by wagerr.com staff): https://tinyurl.com/yy6xa3p4
+ - Report a bug: https://tinyurl.com/y5wzybwe
+ - Report some random issue: https://tinyurl.com/y5cgm2vp
+ - Testing Report: https://tinyurl.com/y39n2hsv
+
+Package: wagerr-qt
+Architecture: any
+Depends: libboost-program-options1.71.0 | libboost-program-options1.67.0 | libboost-program-options1.65.1 | libboost-program-options1.58.0,
+ libboost-thread1.71.0 | libboost-thread1.67.0 | libboost-thread1.65.1 | libboost-thread1.58.0,
+ libboost-chrono1.71.0 | libboost-chrono1.67.0 | libboost-chrono1.65.1 | libboost-chrono1.58.0,
+ libqt5network5,
+ libqt5widgets5,
+ libqrencode3 | libqrencode4,
+ libprotobuf17 | libprotobuf10 | libprotobuf9v5,
+ libdb4.8++,
+ libevent-pthreads-2.1-7 | libevent-pthreads-2.1-6 | libevent-pthreads-2.0-5,
+ libssl1.0.0 | libssl1.0.0-depends
+Description: gaming related peer-to-peer network based digital currency wagerr GUI
+ wagerr Core is an MIT licensed,  open source, gaming oriented,
+ blockchain-based cryptocurrency with ultra fast transactions,
+ low fees, high network decentralization, and Zero Knowledge
+ cryptography proofs for industry-leading transaction anonymity.
+ .
+ Full transaction history is stored locally at each client.  This
+ requires 1+ GB of space, slowly growing.
+ .
+ This package provides wagerr-Qt, a GUI for wagerr based on Qt.
+ .
+ Documentation and wiki:
+ - Wiki (wagerr):      https://github.com/wagerr/wagerr/wiki
+ - Technical documentation: https://techdoc.wagerrcoin.org
+ - Whitepaper: https://wagerr.com/en/whitepaper
+ - Technical whitepaper: https://tinyurl.com/y3st8jfb
+ .
+ Get source code from BitBucket: https://bitbucket.org/wagerr/wagerr.git
+ Get CE source code from Github: https://github.com/cevap/wagerr.git
+ .
+ Chat with Support on Discord: https://discord.gg/vuZn7gC
+ .
+ Contact us on social networks and forums
+ Instagram: https://t.me/wagerr
+ Twitter:   https://twitter.com/wagerromics
+ Reddit:    https://www.reddit.com/r/wagerr/
+ Facebook:  https://facebook.com/wagerr
+ .
+ - Feature request: https://tinyurl.com/y5ds7s3t
+ - I need help/support (observed by wagerr.com staff): https://tinyurl.com/yy6xa3p4
+ - Report a bug: https://tinyurl.com/y5wzybwe
+ - Report some random issue: https://tinyurl.com/y5cgm2vp
+ - Testing Report: https://tinyurl.com/y39n2hsv
+
+Package: wagerr-tx
+Architecture: any
+Depends: libboost-program-options1.71.0 | libboost-program-options1.67.0 | libboost-program-options1.65.1 | libboost-program-options1.58.0,
+ libboost-thread1.71.0 | libboost-thread1.67.0 | libboost-thread1.65.1 | libboost-thread1.58.0,
+ libboost-chrono1.71.0 | libboost-chrono1.67.0 | libboost-chrono1.65.1 | libboost-chrono1.58.0,
+ libqrencode3 | libqrencode4,
+ libprotobuf17 | libprotobuf10 | libprotobuf9v5,
+ libdb4.8++,
+ libevent-pthreads-2.1-7 | libevent-pthreads-2.1-6 | libevent-pthreads-2.0-5,
+ libssl1.0.0 | libssl1.0.0-depends
+Description: gaming related peer-to-peer network based digital currency tx tool
+ wagerr Core is an MIT licensed,  open source, gaming oriented,
+ blockchain-based cryptocurrency with ultra fast transactions,
+ low fees, high network decentralization, and Zero Knowledge
+ cryptography proofs for industry-leading transaction anonymity.
+ .
+ Full transaction history is stored locally at each client.  This
+ requires 1+ GB of space, slowly growing.
+ .
+ This package provides wagerr-tx, a tool for wagerr based transactions.
+ .
+ Documentation and wiki:
+
+ - Wiki (wagerr):      https://github.com/wagerr/wagerr/wiki
+ - Wiki (wagerr Core CE): https://github.com/cevap/wagerr/wiki
+ - Technical documentation: https://techdoc.wagerrcoin.org
+ - Whitepaper: https://wagerr.com/en/whitepaper
+ - Technical whitepaper: https://tinyurl.com/y3st8jfb
+ .
+ Get source code from BitBucket: https://bitbucket.org/wagerr/wagerr.git
+ Get CE source code from Github: https://github.com/cevap/wagerr.git
+ .
+ Chat with Support on Discord: https://discord.gg/vuZn7gC
+ .
+ Contact us on social networks and forums
+ Instagram: https://t.me/wagerr
+ Twitter:   https://twitter.com/wagerromics
+ Reddit:    https://www.reddit.com/r/wagerr/
+ Facebook:  https://facebook.com/wagerr
+ .
+ - Feature request: https://tinyurl.com/y5ds7s3t
+ - I need help/support (observed by wagerr.com staff): https://tinyurl.com/yy6xa3p4
+ - Report a bug: https://tinyurl.com/y5wzybwe
+ - Report some random issue: https://tinyurl.com/y5cgm2vp
+ - Testing Report: https://tinyurl.com/y39n2hsv
+
+Package: wagerr-full
+Architecture: any
+Depends: libboost-program-options1.71.0 | libboost-program-options1.67.0 | libboost-program-options1.65.1 | libboost-program-options1.58.0,
+ libboost-thread1.71.0 | libboost-thread1.67.0 | libboost-thread1.65.1 | libboost-thread1.58.0,
+ libboost-chrono1.71.0 | libboost-chrono1.67.0 | libboost-chrono1.65.1 | libboost-chrono1.58.0,
+ libqt5network5,
+ libqt5widgets5,
+ libqrencode3 | libqrencode4,
+ libprotobuf17 | libprotobuf10 | libprotobuf9v5,
+ libdb4.8++,
+ libevent-pthreads-2.1-7 | libevent-pthreads-2.1-6 | libevent-pthreads-2.0-5,
+ libssl1.0.0 | libssl1.0.0-depends
+Description: gaming related peer-to-peer network based digital currency full suite
+ wagerr Core is an MIT licensed,  open source, gaming oriented,
+ blockchain-based cryptocurrency with ultra fast transactions,
+ low fees, high network decentralization, and Zero Knowledge
+ cryptography proofs for industry-leading transaction anonymity.
+ .
+ Full transaction history is stored locally at each client.  This
+ requires 1+ GB of space, slowly growing.
+ .
+ This package provides wagerr QT GUI, daemon and CLI:
+   wagerr-qt, wagerrd, wagerr-tx, wagerr-cli
+ .
+ Documentation and wiki:
+
+ - Wiki (wagerr):      https://github.com/wagerr/wagerr/wiki
+ - Wiki (wagerr Core CE): https://github.com/cevap/wagerr/wiki
+ - Technical documentation: https://techdoc.wagerrcoin.org
+ - Whitepaper: https://wagerr.com/en/whitepaper
+ - Technical whitepaper: https://tinyurl.com/y3st8jfb
+ .
+ Get source code from BitBucket: https://bitbucket.org/wagerr/wagerr.git
+ Get CE source code from Github: https://github.com/cevap/wagerr.git
+ .
+ Chat with Support on Discord: https://discord.gg/vuZn7gC
+ .
+ Contact us on social networks and forums
+ Instagram: https://t.me/wagerr
+ Twitter:   https://twitter.com/wagerromics
+ Reddit:    https://www.reddit.com/r/wagerr/
+ Facebook:  https://facebook.com/wagerr
+ .
+ - Feature request: https://tinyurl.com/y5ds7s3t
+ - I need help/support (observed by wagerr.com staff): https://tinyurl.com/yy6xa3p4
+ - Report a bug: https://tinyurl.com/y5wzybwe
+ - Report some random issue: https://tinyurl.com/y5cgm2vp
+ - Testing Report: https://tinyurl.com/y39n2hsv
+
+Package: wagerr-dev
+Architecture: any
+Depends: libboost-program-options1.71.0 | libboost-program-options1.67.0 | libboost-program-options1.65.1 | libboost-program-options1.58.0,
+ libboost-thread1.71.0 | libboost-thread1.67.0 | libboost-thread1.65.1 | libboost-thread1.58.0,
+ libboost-chrono1.71.0 | libboost-chrono1.67.0 | libboost-chrono1.65.1 | libboost-chrono1.58.0,
+ libqt5network5,
+ libqt5widgets5,
+ libqrencode3 | libqrencode4,
+ libprotobuf17 | libprotobuf10 | libprotobuf9v5,
+ libdb4.8++,
+ libevent-pthreads-2.1-7 | libevent-pthreads-2.1-6 | libevent-pthreads-2.0-5,
+ libssl1.0.0 | libssl1.0.0-depends
+Description: gaming related peer-to-peer network based digital currency dev package
+ wagerr Core is an MIT licensed,  open source, gaming oriented,
+ blockchain-based cryptocurrency with ultra fast transactions,
+ low fees, high network decentralization, and Zero Knowledge
+ cryptography proofs for industry-leading transaction anonymity.
+ .
+ Full transaction history is stored locally at each client.  This
+ requires 1+ GB of space, slowly growing.
+ .
+ This package provides all wagerr Core related packaged:
+   wagerr-qt, wagerrd, wagerr-tx, wagerr-cli, test_wagerr, test_wagerr-qt
+ .
+ Documentation and wiki:
+
+ - Wiki (wagerr):      https://github.com/wagerr/wagerr/wiki
+ - Wiki (wagerr Core CE): https://github.com/cevap/wagerr/wiki
+ - Technical documentation: https://techdoc.wagerrcoin.org
+ - Whitepaper: https://wagerr.com/en/whitepaper
+ - Technical whitepaper: https://tinyurl.com/y3st8jfb
+ .
+ Get source code from BitBucket: https://bitbucket.org/wagerr/wagerr.git
+ Get CE source code from Github: https://github.com/cevap/wagerr.git
+ .
+ Chat with Support on Discord: https://discord.gg/vuZn7gC
+ .
+ Contact us on social networks and forums
+ Instagram: https://t.me/wagerr
+ Twitter:   https://twitter.com/wagerromics
+ Reddit:    https://www.reddit.com/r/wagerr/
+ Facebook:  https://facebook.com/wagerr
+ .
+ - Feature request: https://tinyurl.com/y5ds7s3t
+ - I need help/support (observed by wagerr.com staff): https://tinyurl.com/yy6xa3p4
+ - Report a bug: https://tinyurl.com/y5wzybwe
+ - Report some random issue: https://tinyurl.com/y5cgm2vp
+ - Testing Report: https://tinyurl.com/y39n2hsv

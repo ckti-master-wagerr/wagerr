@@ -1,0 +1,4 @@
+debian/manpages/wagerrd.1
+debian/manpages/wagerr-cli.1
+debian/manpages/wagerr-tx.1
+debian/manpages/wagerr-qt.1

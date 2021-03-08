@@ -1,0 +1,14 @@
+# http://standards.freedesktop.org/desktop-entry-spec/desktop-entry-spec-1.0.html
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=Wagerr Core Daemon
+Comment=regtest
+GenericName=Wagerr Digital Currency Daemon Client regresswagerr test network
+Exec=wagerrd %u
+Terminal=true
+Type=Application
+Icon=wagerrd_regtest128
+MimeType=x-scheme-handler/wagerr;
+Categories=X-Finance;X-Games;
+Keywords=internet;wagerr;xwagerr;core;wallet;daemon;regtest;deb;launchpad;crypto;digital;currency;coin;betting;zerocoin;
