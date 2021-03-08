@@ -61,7 +61,7 @@ Description: gaming related peer-to-peer network based digital currency daemon
  This package provides wagerrd daemon, a daemon for wagerr.
  .
  Documentation and wiki:
-
+ .
  - Wiki (wagerr):      https://github.com/wagerr/wagerr/wiki
  - Wiki (wagerr Core CE): https://github.com/cevap/wagerr/wiki
  - Technical documentation: https://techdoc.wagerrcoin.org
@@ -107,7 +107,7 @@ Description: gaming related peer-to-peer network based digital currency CLI
  This package provides wagerr-cli, a CLI for wagerr.
  .
  Documentation and wiki:
-
+ .
  - Wiki (wagerr):      https://github.com/wagerr/wagerr/wiki
  - Wiki (wagerr Core CE): https://github.com/cevap/wagerr/wiki
  - Technical documentation: https://techdoc.wagerrcoin.org
@@ -199,7 +199,7 @@ Description: gaming related peer-to-peer network based digital currency tx tool
  This package provides wagerr-tx, a tool for wagerr based transactions.
  .
  Documentation and wiki:
-
+ .
  - Wiki (wagerr):      https://github.com/wagerr/wagerr/wiki
  - Wiki (wagerr Core CE): https://github.com/cevap/wagerr/wiki
  - Technical documentation: https://techdoc.wagerrcoin.org
@@ -297,7 +297,7 @@ Description: gaming related peer-to-peer network based digital currency dev pack
    wagerr-qt, wagerrd, wagerr-tx, wagerr-cli, test_wagerr, test_wagerr-qt
  .
  Documentation and wiki:
-
+ .
  - Wiki (wagerr):      https://github.com/wagerr/wagerr/wiki
  - Wiki (wagerr Core CE): https://github.com/cevap/wagerr/wiki
  - Technical documentation: https://techdoc.wagerrcoin.org
